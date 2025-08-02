@@ -4,8 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class signup extends Model
+
+class signup extends Authenticatable
 {
    
 
@@ -15,4 +17,11 @@ class signup extends Model
         'parliamentary_seat', 'email', 'facebook_id', 'birthday', 'age', 'blood_group',
         'nationality', 'national_id', 'reference_id', 'member_type', 'member_img', 'nid_img','password'
     ];
+
+    
+
+    public function getAuthPassword()
+    {
+        return $this->PASSWORD;
+    }
 }

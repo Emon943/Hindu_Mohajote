@@ -19,11 +19,18 @@ class FrontEndController extends Controller
     	return view('FrontEnd.pages.home', ['slider' => $slider, 'videos' => $videos, 'projects' => $projects]);
     }
 
+	public function member_login(){
+
+    	return view('FrontEnd.login.memberlogin');
+    }
+
     public function about(){
 
     	$projects = DB::table('projects')->get();
     	return view('FrontEnd.pages.about', ['projects' => $projects]);
     }
+
+
 
 	public function corporateinfo(){
 

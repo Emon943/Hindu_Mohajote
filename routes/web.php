@@ -20,6 +20,8 @@ use App\Http\Controllers\CorporateInfoController;
 use App\Http\Controllers\InvestorRelationController;
 use App\Http\Controllers\NewsEventsController;
 use App\Http\Controllers\SignupController;
+use App\Http\Controllers\Auth\MemberLoginController;
+use App\Http\Middleware\MemberAuthenticate;
 
 
 
@@ -29,6 +31,19 @@ Route::get('/corporate-info', [FrontEndController::class,'corporateinfo']);
 Route::get('/investor-relation', [FrontEndController::class,'investor_relation']);
 Route::get('/investor-relation', [FrontEndController::class,'investor_relation']);
 Route::get('/news-events', [FrontEndController::class,'news_events']);
+Route::get('/member-login', [FrontEndController::class,'member_login']);
+
+
+Route::post('/member-login', [MemberLoginController::class, 'member_login']);
+Route::get('/member/logout', [MemberLoginController::class, 'logout'])->name('member.logout');
+
+Route::middleware('auth:member')->group(function () {
+    Route::get('/member/dashboard', function () {
+     return view('member_dashboard');
+    });
+});
+
+
 Route::get('/signup', [SignupController::class,'signup']);
 Route::post('/save-signup', [SignupController::class,'store']);
 Route::post('/check-reference', [SignupController::class, 'checkReference'])->name('check.reference');

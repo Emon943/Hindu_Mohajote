@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash; 
 use App\Models\Signup;
 
 class SignupController extends Controller
@@ -69,7 +70,7 @@ class SignupController extends Controller
             $validated['nid_img'] = null; // যদি ফাইল না থাকে, তাহলে null সেট করুন
       }
          // Example registration number generation
-         $validated['password'] = bcrypt('default123');
+         $validated['password'] = Hash::make('default123');
 
           $member_type = $request->input('member_type');
           $lastUser = signup::where('member_type', $member_type)
@@ -111,6 +112,6 @@ class SignupController extends Controller
         // ✅ Save to DB
         Signup::create($validated);
 
-        return redirect('/signup')->with('success', 'Signup successful!');
+        return redirect('/member-login')->with('success', 'Signup successful!');
     }
 }

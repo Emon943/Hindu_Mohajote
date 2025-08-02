@@ -45,12 +45,12 @@ This is a sample scrolling text that has scrolls texts to the right. This is a s
 
             <div class="col-md-6 mb-3">
                 <label>Father's Name</label>
-                <input type="text" name="father_name" class="form-control">
+                <input type="text" name="father_name" class="form-control" required>
             </div>
 
             <div class="col-md-6 mb-3">
                 <label>Mother's Name</label>
-                <input type="text" name="mother_name" class="form-control">
+                <input type="text" name="mother_name" class="form-control" required>
             </div>
 
             <div class="col-md-6 mb-3">
@@ -65,37 +65,37 @@ This is a sample scrolling text that has scrolls texts to the right. This is a s
 
             <div class="col-md-6 mb-3">
                 <label>Telephone</label>
-                <input type="text" name="telephone" class="form-control">
+                <input type="text" name="telephone" class="form-control" required>
             </div>
 
             <div class="col-md-6 mb-3">
                 <label>Educational Qualification</label>
-                <input type="text" name="education_qualification" class="form-control">
+                <input type="text" name="education_qualification" class="form-control" required>
             </div>
 
             <div class="col-md-6 mb-3">
                 <label>Parliamentary Seat</label>
-                <input type="text" name="parliamentary_seat" class="form-control">
+                <input type="text" name="parliamentary_seat" class="form-control" required>
             </div>
 
             <div class="col-md-6 mb-3">
                 <label>Email</label>
-                <input type="email" name="email" class="form-control">
+                <input type="email" name="email" class="form-control" required>
             </div>
 
             <div class="col-md-6 mb-3">
                 <label>Facebook ID</label>
-                <input type="text" name="facebook_id" class="form-control">
+                <input type="text" name="facebook_id" class="form-control" required>
             </div>
 
             <div class="col-md-6 mb-3">
                 <label>Birthday</label>
-                <input type="date" name="birthday" class="form-control">
+                <input type="date" name="birthday" class="form-control" required>
             </div>
 
             <div class="col-md-3 mb-3">
                 <label>Age</label>
-                <input type="number" name="age" class="form-control">
+                <input type="number" name="age" class="form-control" required>
             </div>
 
             <div class="col-md-3 mb-3">
@@ -105,17 +105,17 @@ This is a sample scrolling text that has scrolls texts to the right. This is a s
 
             <div class="col-md-3 mb-3">
                 <label>Nationality</label>
-                <input type="text" name="nationality" class="form-control">
+                <input type="text" name="nationality" class="form-control" required>
             </div>
 
             <div class="col-md-3 mb-3">
                 <label>National ID</label>
-                <input type="text" name="national_id" class="form-control">
+                <input type="text" name="national_id" class="form-control" required>
             </div>
 
             <div class="col-md-6 mb-3">
                 <label>Reference ID</label>
-                <input type="text" id="reference_id" name="reference_id" class="form-control">
+                <input type="text" id="reference_id" name="reference_id" class="form-control" required>
                 <span id="reference_error" style="color:red;"></span>
             </div>
 

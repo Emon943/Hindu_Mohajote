@@ -40,6 +40,12 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
+        'member' => [   //Guard name
+        'driver' => 'session',
+        'provider' => 'signups', //database table name
+    ],
+
     ],
 
     /*
@@ -65,10 +71,11 @@ return [
             'model' => env('AUTH_MODEL', App\Models\User::class),
         ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        'signups' => [ // ✅ এই নামটা guards-এ use হচ্ছে
+        'driver' => 'eloquent',
+        'model' => App\Models\Signup::class,
+    ],
+  
     ],
 
     /*
