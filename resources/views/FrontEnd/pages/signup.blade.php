@@ -28,7 +28,7 @@ This is a sample scrolling text that has scrolls texts to the right. This is a s
         {{ session('success') }}
     </div>
 @endif
-    <form action="{{ url('/save-signup') }}" method="POST" enctype="multipart/form-data">
+    <form id="signup_form" action="{{ url('/save-signup') }}" method="POST" enctype="multipart/form-data">
         @csrf
 
         <div class="row">
@@ -117,6 +117,7 @@ This is a sample scrolling text that has scrolls texts to the right. This is a s
                 <label>Reference ID</label>
                 <input type="text" id="reference_id" name="reference_id" class="form-control" required>
                 <span id="reference_error" style="color:red;"></span>
+                <span id="reference_ok" style="color:green;"></span>
             </div>
 
             <div class="col-md-6 mb-3">
@@ -163,6 +164,7 @@ This is a sample scrolling text that has scrolls texts to the right. This is a s
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
+     let referenceValid = false;
     $('#reference_id').on('blur', function () {
         let referenceId = $(this).val();
         if (referenceId !== '') {
@@ -175,15 +177,31 @@ This is a sample scrolling text that has scrolls texts to the right. This is a s
                 },
                 success: function (response) {
                     if (response.exists) {
+                        referenceValid = true;
                         $('#reference_error').text('');
+                    $('#reference_ok').text('Reference ID is valid.');
+
+                        
                     } else {
+                        referenceValid = false;
                         $('#reference_error').text('এই Reference ID সিস্টেমে পাওয়া যায়নি।');
                     }
                 },
                 error: function () {
+                    referenceValid = false;
                     $('#reference_error').text('Server error!');
                 }
             });
+        }
+    });
+
+     $('#signup_form').on('submit', function (e) {
+        if (!referenceValid) {
+            e.preventDefault();
+            $('#reference_error').text('সঠিক Reference ID দিন।');
+            $('html, body').animate({
+                scrollTop: $("#reference_id").offset().top - 100
+            }, 500);
         }
     });
 </script>

@@ -3,7 +3,7 @@
 
 <head>
     <title>@yield('title') | Hindu Mohajote</title>
-    <!--<link rel="icon" href=" {{ asset('FrontEnd/images/roya.ico') }} " type="image/x-icon">-->
+   
     <link rel="apple-touch-icon" href=" {{ asset('FrontEnd/images/apple-touch-icon.png') }} ">
     <link rel="icon" sizes="180x180" href=" {{ asset('FrontEnd/images/android-icon.png') }} ">
     <meta name="viewport" content="width=device-width, initial-scale=1">

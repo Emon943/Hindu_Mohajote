@@ -10,7 +10,7 @@ body {
     margin: 0;
     font-size: 100%;
     font-family: 'Poppins', sans-serif;
-    background: #a99a7d;
+    background: #c9942c;
 }
 
 body a {
@@ -393,7 +393,7 @@ form.header-search {
 }
 
 .welcome p span{
-    color:#F26422;
+    color:#c9942c;
 }
 
 .about_welcome p{
@@ -407,7 +407,7 @@ form.header-search {
 }
 
 .choose-main h4{
-    color: #F26422;
+    color: #c9942c;
     font-weight: 700;
     letter-spacing: normal;
     font-family: Lucida Console;
@@ -419,7 +419,7 @@ form.header-search {
 }
 
 .about h4{
-    color: #F26422;
+    color: #c9942c;
     font-weight: 700;
     letter-spacing: normal;
     font-family: Verdana;
@@ -436,7 +436,7 @@ form.header-search {
 }
 
 .tab-menu p i{
-    color: #F37337;
+    color: #c9942c;
 }
 
 .tab-menu a{
@@ -460,7 +460,7 @@ form.header-search {
 }
 
 .project h4{
-    color: #F26422;
+    color: #c9942c;
     font-weight: 700;
     letter-spacing: normal;
     font-family: Verdana;

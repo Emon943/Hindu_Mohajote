@@ -39,7 +39,7 @@
 
         <div class="row">
             <div class="col-md-12">
-                <hr style="border:1px solid #f26422">
+                <hr style="border:1px solid #c9942c">
             </div>
         </div>
     </div>

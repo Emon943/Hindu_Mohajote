@@ -32,6 +32,7 @@ This is a sample scrolling text that has scrolls texts to the right. This is a s
                        <li><a class="hvr-wobble-horizontal" href=" {{ url('/about-us') }} ">About Us</a></li>
                        <li><a class="hvr-wobble-horizontal" href=" {{ url('/corporate-info') }} ">Member Information</a></li>
                         <li><a class="hvr-wobble-horizontal" href=" {{ url('/news-events') }} ">News & Events</a></li>
+                        <li><a class="hvr-wobble-horizontal" href=" {{ url('/Notice') }} ">Notice</a></li>
 						 <li class="dropdown">
                             <a class="hvr-wobble-horizontal dropbtn" href=" {{ url('/project') }} ">Projects</a>
                             <div class="dropdown-content side_scroll" id="drop_con">
