@@ -73,10 +73,23 @@ This is a sample scrolling text that has scrolls texts to the right. This is a s
                 <input type="text" name="education_qualification" class="form-control" required>
             </div>
 
-            <div class="col-md-6 mb-3">
-                <label>Parliamentary Seat</label>
-                <input type="text" name="parliamentary_seat" class="form-control" required>
-            </div>
+        <div class="col-md-6 mb-3">
+        <label for="district">Districts</label>
+        <select id="district" name="district" class="form-control">
+            <option value="">-- select districts--</option>
+            @foreach($districts as $district)
+                <option value="{{ $district->id }}">{{ $district->name }}</option>
+            @endforeach
+        </select>
+     </div>
+
+     <div class="col-md-6 mb-3">
+        <label for="thana">Thana</label>
+        <select id="thana" name="thana" class="form-control">
+            <option value="">-- আগে জেলা নির্বাচন করুন --</option>
+        </select>
+       </div>
+
 
             <div class="col-md-6 mb-3">
                 <label>Email</label>
@@ -202,6 +215,27 @@ This is a sample scrolling text that has scrolls texts to the right. This is a s
             $('html, body').animate({
                 scrollTop: $("#reference_id").offset().top - 100
             }, 500);
+        }
+    });
+
+
+    $('#district').on('change', function () {
+        var districtID = $(this).val();
+        if (districtID) {
+            $.ajax({
+                url: '/get-thanas/' + districtID,
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    $('#thana').empty();
+                    $('#thana').append('<option value="">-- Select Thana --</option>');
+                    $.each(data, function (key, value) {
+                        $('#thana').append('<option value="' + value.id + '">' + value.name + '</option>');
+                    });
+                }
+            });
+        } else {
+            $('#thana').empty().append('<option value="">-- আগে জেলা নির্বাচন করুন --</option>');
         }
     });
 </script>

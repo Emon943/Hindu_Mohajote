@@ -22,7 +22,8 @@ return new class extends Migration
             $table->text('PERMANENT_ADDRESS');
             $table->string('TELEPHONE');
             $table->string('EDUCATION_QUALIFICATION');
-            $table->string('PARLIAMENTARY_SEAT');
+            $table->string('district');
+            $table->string('thana');
              $table->string('EMAIL');
             $table->string('FACEBOOK_ID')->nullable();
             $table->date('BIRTHDAY');

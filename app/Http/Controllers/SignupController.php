@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash; 
 use App\Models\Signup;
+use App\Models\District;
 
 class SignupController extends Controller
 {
     public function signup()
     {
-        return view('FrontEnd.pages.signup');
+         $districts = District::all();
+        return view('FrontEnd.pages.signup', compact('districts'));
     }
 
     public function checkReference(Request $request)
@@ -37,7 +39,8 @@ class SignupController extends Controller
             'permanent_address' => 'nullable|string',
             'telephone' => 'nullable|string|max:20',
             'education_qualification' => 'nullable|string|max:255',
-            'parliamentary_seat' => 'nullable|string|max:255',
+            'district' => 'nullable|string',
+            'thana' => 'nullable|string',
             'email' => 'nullable|email|max:255',
             'facebook_id' => 'nullable|string|max:255',
             'birthday' => 'nullable|date',
