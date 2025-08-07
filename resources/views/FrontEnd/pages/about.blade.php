@@ -72,7 +72,7 @@ img {
 </style>
 @section('welcome')
     <!--<p class="blink">Welcome to <span>Pandamic Fisheries</span></p>-->
-	<p class="wrapper fade-in">Welcome to <span>Pandamic Fisheries</span></p>
+	<p class="wrapper fade-in">Welcome to <span>Hindu Mohajote</span></p>
 	
 @endsection
 @section('main-content')
@@ -84,7 +84,25 @@ img {
           <h4 class="text-center">About Us</h4>
         </div>
         <div class="about_welcome text-center">
-          <p>Pandemic Fisheries Company is a pioneering organization dedicated to the sustainable management and revitalization of fisheries impacted by the COVID-19 pandemic. With a focus on resilience and innovation, we aim to restore the vitality of fish populations and support the livelihoods of communities dependent on fisheries.</p>
+          <p>Bangladesh Hindu Mohajote is a non-political, non-violent, and community-based national platform dedicated to protecting the rights, dignity, culture, and heritage of the Hindu community in Bangladesh. Established with the vision of ensuring equal rights and security for Hindus, the organization has been actively working to promote religious harmony, social justice, and national unity.
+
+Our mission is to raise awareness about the challenges faced by the Hindu minority, advocate for their constitutional rights, and engage with policymakers, civil society, and the international community to ensure safety, freedom of religion, and protection of property and temples.
+
+Through peaceful demonstrations, legal aid, cultural events, and public dialogues, Bangladesh Hindu Mohajote works tirelessly to:
+
+Stand against communal violence and discrimination
+
+Protect Hindu temples, festivals, and cultural institutions
+
+Support victims of religious persecution
+
+Promote education and socio-economic development of the Hindu community
+
+Strengthen unity among all minorities in Bangladesh
+
+We believe in a secular and inclusive Bangladesh where every citizen, regardless of religion or ethnicity, can live with dignity and peace. Bangladesh Hindu Mohajote invites all people of conscience to join hands in building a tolerant and respectful society for future generations.
+
+</p>
         </div>
       </div>
     </div>
@@ -94,7 +112,7 @@ img {
       <div class="col-md-12 col-sm-12">
         <div class="tab-menu">
           <ul class="nav nav-tabs" role="tablist">
-            <li class="nav-item">
+            <!--<li class="nav-item">
               <a class="nav-link active" data-toggle="tab" href="#Chairman">Chairman Message</a>
             </li>
             <li class="nav-item">
@@ -102,126 +120,16 @@ img {
             </li>
             <li class="nav-item">
               <a class="nav-link" data-toggle="tab" href="#director"> List Of Director</a>
-            </li>
-			<li class="nav-item">
+            </li>-->
+			    <li class="nav-item">
               <a class="nav-link" data-toggle="tab" href="#MV"> Mission & vision</a>
-            </li>
+          </li>
           </ul>
           <div class="tab-content">
-            <div id="Chairman" class="container tab-pane active"><br>
-			<div class="container">
-			  <div class="row">
-				<div class="col-md-4"><img src="{{ asset('public/BackEnd/profile_image/Saidul_Rahman.jpg') }}" alt="Mike" style="width:100%"></div>
-				<div class="col-md-8"><span class="pull-right">Bir Muktizoddah, Mr. Abu Mohammad Saidur Rahman - a resident of United Arab Emirates, was born in February, 1951 in Barisal. He possesses an excellent academic background and completed his Hon’s degree in 1972 and obtained his Masters Degree in Mathematics with distinction in 1974 from the University of Dhaka. He was a resident student of Sgt. Jahurul Huq Hall and actively participated in the student movements in 1968 and mass revolution in 1969 and joined the liberation war of 1971. Mr. Rahman joined the Bangladesh Civil Service in 1977 and performed diverse activities in the development and regulatory Ministries viz. Planning, Agriculture and Forest, Relief and Rehabilitation, Home Affairs, and Finance. He was also involved in various National level activities, namely, approval and monitoring of relief and rehabilitation activities of NGOs worked for the flood victims of 1988; National Pay Scale 1990 and conducted Bangladesh Agricultural Census and Bangladesh Economic Census as Project Director. He was also the Director of the Statistical training institute in BBS. He attended various training, workshop and seminars at home and abroad. He visited India, USA, Canada, Japan, Hong Kong, Thailand, Malaysia, Switzerland, Austria, France, Germany, Australia, and Nepal. After retirement from the Government service in 2008, he involved in business and now he is the Chairman of M/s. Royal Denim Limited – a 100% Export Oriented Denim Fabrics Manufacturing Industry and also the proprietor of Regal Dream International in UAE. He is blessed with one daughter and two sons namely, Tushar Iqbal Rahman - a permanent resident of Germany and Faisal Rahman Tamal - a permanent resident of Australia.</span></div>
-			  </div>
-			</div>
-     
-            </div>
+            
 			
-            <div id="CEO" class="container tab-pane fade"><br>
-              <div class="container">
-			  <div class="row">
-				<div class="col-md-4"><img src="{{ asset('public/BackEnd/profile_image/shamim_ceo.jpg') }}" alt="Mike" style="width:100%"></div>
-				<div class="col-md-8"><span class="pull-right"><h5>S.M. HELAL UDDIN SHAMIM </h5><p>"At Pandamic Fisheries we care about People, our Products and the Planet. These core values are demonstrated through our actions.
 
-The safety and well-being of our people is our highest priority.  Improvement of workplace safety is an ongoing process and as a leader in the Bangladesh commercial fishing industry, we have invested heavily to ensure our boats, skippers and crews are as safe as possible. We are working closely with regulators and our industry peers to drive improvements to safety culture, training and the regulations governing Occupational Health and Safety for our industry.
-
-We are privileged to be the custodians of some of Bangladesh’s most extraordinary fisheries resources.  Developing a deep understanding of these fisheries is at the very heart of our business so we can build our brands and continue to supply spectacular seafood products to our customers. Our ownership of Property rights in these fisheries directly aligns our interests with community expectations that we will do everything practicable to protect the species that we harvest and preserve the ecosystems that support them.</p></span></div>
-			  </div>
-			</div>
-            </div>
 			
-           <div id="director" class="container tab-pane fade"><br>
-         <div class="column">
-		  <div class="card">
-		  <img src="{{ asset('public/BackEnd/profile_image/director.jpg') }}" alt="Mike" style="width:100%">
-		   <div class="container">
-			<p class="text-center"><u><a href="#myModal" data-bs-toggle="modal">Mr. Abu Mohammad Saidur Rahman</a></u></p>
-			<p class="title text-center">Directors</p>
-			<!--<p>fdzhmbvhjdfkvg</p>-->
-			
-		  </div>
-		 </div>
-        </div>
-	  
-   <div class="column">
-    <div class="card">
-      <img src="{{ asset('public/BackEnd/profile_image/director.jpg') }}" alt="Mike" style="width:100%">
-      <div class="container">
-        <p class="text-center"><u><a href="#myModal" data-bs-toggle="modal">A.K.M Mostafizur Rahman</a></u></p>
-        <p class="title text-center">Directors</p>
-        <!--<p>fdzhmbvhjdfkvg</p>-->
-        
-      </div>
-    </div>
-  </div>
-  
-   <div class="column">
-    <div class="card">
-      <img src="{{ asset('public/BackEnd/profile_image/director.jpg') }}" alt="Mike" style="width:100%">
-      <div class="container">
-        <p class="text-center"><u><a href="#myModal" data-bs-toggle="modal">Dr. Tamanna Khatun</a></u></p>
-        <p class="title text-center">Directors</p>
-        <!--<p>fdzhmbvhjdfkvg</p>-->
-        
-      </div>
-    </div>
-  </div>
-  
-  <div class="column">
-    <div class="card">
-      <img src="{{ asset('public/BackEnd/profile_image/director.jpg') }}" alt="Mike" style="width:100%">
-      <div class="container">
-        <p class="text-center"><u><a href="#myModal" data-bs-toggle="modal">Md. Sejedur Rahman</a></u></p>
-        <p class="title text-center">Directors</p>
-        <!--<p>fdzhmbvhjdfkvg</p>-->
-        
-      </div>
-    </div>
-  </div>
-  
-  
-  
-  <div class="column">
-    <div class="card">
-      <img src="{{ asset('public/BackEnd/profile_image/director.jpg') }}" alt="Mike" style="width:100%">
-      <div class="container">
-        <p class="text-center"><u><a href="#myModal" data-bs-toggle="modal">MRS. Afroza Begum</a></u></p>
-        <p class="title text-center">Directors</p>
-        <!--<p>fdzhmbvhjdfkvg</p>-->
-        
-      </div>
-    </div>
-  </div>
-  
-  <div class="column">
-    <div class="card">
-      <img src="{{ asset('public/BackEnd/profile_image/director.jpg') }}" alt="Mike" style="width:100%">
-      <div class="container">
-        <p class="text-center"><u><a href="#myModal" data-bs-toggle="modal">MRS. Helena Aktar</a></u></p>
-        <p class="title text-center">Directors</p>
-        <!--<p>fdzhmbvhjdfkvg</p>-->
-        
-      </div>
-    </div>
-  </div>
-  
-   <div class="column">
-    <div class="card">
-      <img src="{{ asset('public/BackEnd/profile_image/director.jpg') }}" alt="Mike" style="width:100%">
-      <div class="container">
-        <p class="text-center"><u><a href="#myModal" data-bs-toggle="modal">MRS. Farzana Yeasmin</a></u></p>
-        <p class="title text-center">Directors</p>
-        <!--<p>fdzhmbvhjdfkvg</p>-->
-        
-      </div>
-    </div>
-  </div>
-  
-  
-  
-  
-  </div>
 			
 			
 			<div id="MV" class="container tab-pane fade"><br>

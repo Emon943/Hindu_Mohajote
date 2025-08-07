@@ -37,17 +37,23 @@
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
 
-         <div>
-            <x-input-label for="role" :value="__('User Role')" />
-           <select id="role" class="form-select" name="role" required>
-            <option value="">-- Select User Role --</option>
-            <option value="1">Super Admin</option>
-              <option value="2">Admin</option>
-              <option value="3">Member</option>
-               <x-input-error :messages="$errors->get('role')" class="mt-2" />
-             
-        </select>
-        </div>
+        <!-- User Role Dropdown -->
+<div class="mt-4">
+    <x-input-label for="role" :value="__('User Role')" />
+
+    <select id="role" name="role"
+        class="block mt-1 w-full rounded-md shadow-sm border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+        required>
+        <option value="">-- Select Role --</option>
+        <option value="admin" {{ old('role') == 'admin' ? 'selected' : '' }}>Admin</option>
+        <option value="member" {{ old('role') == 'member' ? 'selected' : '' }}>Member</option>
+        <option value="user" {{ old('role') == 'user' ? 'selected' : '' }}>User</option>
+    </select>
+
+    <x-input-error :messages="$errors->get('role')" class="mt-2" />
+</div>
+
+
 
         <!-- Password -->
         <div class="mt-4">

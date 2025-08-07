@@ -23,6 +23,8 @@ use App\Http\Controllers\SignupController;
 use App\Http\Controllers\Auth\MemberLoginController;
 use App\Http\Middleware\MemberAuthenticate;
 use App\Http\Controllers\LocationController;
+use App\Http\Controllers\Auth\RegisteredUserController;
+
 
 
 

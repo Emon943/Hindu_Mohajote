@@ -2,7 +2,11 @@
                 <div class="navbar-default sidebar" role="navigation">
                     <div class="sidebar-nav navbar-collapse">
                         <ul class="nav" id="side-menu">
+                          
+    
+
                             <li class="@yield('dashboard')"><a href=" {{ url('/dashboard') }} "><i class="material-icons">dashboard</i>Dashboard</a></li>
+                              @if(Auth::check() && Auth::user()->role_id ==1)
                             <li class="@yield('for_project')">
                                 <a><i class="material-icons">extension</i>Projects<span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
@@ -12,7 +16,7 @@
                                     <li class="@yield('viewproject')"><a href=" {{ url('/view-project') }} ">View</a></li>
                                 </ul>
                             </li>
-
+                      
                             <li class="@yield('needhelp')">
                                 <a href=" {{ url('/need-help-view') }} "><i class="material-icons">people_outline</i>Need Help</a>
                             </li>
@@ -51,6 +55,13 @@
                             </li>
                                     
                             <li class="side-last"></li>
+                            @endif
+@if(Auth::check() && Auth::user()->role_id ==2)
+                             <li class="@yield('MemberPendingList')">
+                                <a href=" {{ url('/want-help-view') }} "><i class="material-icons">people</i>Member Pending List</a>
+                            </li>
+                            <li class="side-last"></li>
+                            @endif
                         </ul>
                     </div>
                 </div>

@@ -21,7 +21,7 @@
 @endpush
 
 @section('welcome')
-    <p class="blink">Welcome to <span>Pandamic Fisheries</span></p>
+    <p class="blink">Welcome to <span>Hindu Hohajote</span></p>
 	
 @endsection
 

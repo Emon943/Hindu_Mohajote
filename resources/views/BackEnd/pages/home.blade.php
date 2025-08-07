@@ -20,6 +20,7 @@
                         </div>
                     </section>
                     <div class="container-fluid">
+                          @if(Auth::check() && Auth::user()->role_id ==1)
                         <div class="row">
                             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                                 <div class="panel cardbox bg-success">
@@ -64,7 +65,53 @@
                                 </div>
                             </div>
                         </div>
+                        @endif
+                        @if(Auth::check() && Auth::user()->role_id ==2)
+                        <div class="row">
+                             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                <div class="panel cardbox bg-success">
+                                    <div class="panel-body card-item panel-refresh">
+                                        <div class="refresh-container"><i class="refresh-spinner fa fa-spinner fa-spin fa-5x"></i></div>
+                                        <div class="timer" data-to="{{$PENDING}}" data-speed="1500">0</div>
+                                        <div class="cardbox-icon">
+                                            <i class="material-icons">extension</i>
+                                        </div>
+                                        <div class="card-details">
+                                            <h4>Member Pending List</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                <div class="panel cardbox bg-my">
+                                    <div class="panel-body card-item panel-refresh">
+                                        <div class="refresh-container"><i class="refresh-spinner fa fa-spinner fa-spin fa-5x"></i></div>
+                                        <div class="timer" data-to="{{$CHECKING}}" data-speed="1500">0</div>
+                                        <div class="cardbox-icon">
+                                            <i class="material-icons">people_outline</i>
+                                        </div>
+                                        <div class="card-details">
+                                            <h4>Member Checking List</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                <div class="panel cardbox bg-info">
+                                    <div class="panel-body card-item panel-refresh">
+                                        <div class="refresh-container"><i class="refresh-spinner fa fa-spinner fa-spin fa-5x"></i></div>
+                                        <div class="timer" data-to="{{$APPROVED}}" data-speed="1500">0</div>
+                                        <div class="cardbox-icon">
+                                            <i class="material-icons">people</i>
+                                        </div>
+                                        <div class="card-details">
+                                            <h4>Member Approved List</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                     </div>
+                    @endif
                 </div>
             </div>
 @endsection

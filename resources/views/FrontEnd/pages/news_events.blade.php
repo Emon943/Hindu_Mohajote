@@ -85,9 +85,9 @@ img {
 </style>
 @section('welcome')
     <!--<p class="blink">Welcome to <span>Pandamic Fisheries</span></p>-->
-	<p class="wrapper fade-in">Welcome to <span>Pandamic Fisheries</span></p>
+	<p class="wrapper fade-in">Welcome to <span>Hindu Hohajote</span></p>
 	<br><br>
-	<p>Investor Relation</p>
+	<p>News Events</p>
 	
 @endsection
 @section('main-content')
