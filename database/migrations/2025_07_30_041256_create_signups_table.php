@@ -33,6 +33,7 @@ return new class extends Migration
             $table->string('NATIONAL_ID');
             $table->string('REFERENCE_ID');
             $table->string('MeMBER_TYPE');
+            $table->string('DESIGNATION');
             $table->string('MEMBER_IMG')->nullable();
             $table->string('NID_IMG')->nullable();
             $table->string('PASSWORD');

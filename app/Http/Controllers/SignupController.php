@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash; 
 use App\Models\Signup;
 use App\Models\District;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\RegistrationMail;
 
 class SignupController extends Controller
 {
@@ -50,6 +52,7 @@ class SignupController extends Controller
             'national_id' => 'nullable|string|max:50',
             'reference_id' => 'nullable|string|max:100',
             'member_type' => 'nullable|string|max:100',
+            'designation' => 'nullable|string|max:100',
             'member_img' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
             'nid_img' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
         ]);
@@ -73,7 +76,8 @@ class SignupController extends Controller
             $validated['nid_img'] = null; // যদি ফাইল না থাকে, তাহলে null সেট করুন
       }
          // Example registration number generation
-         $validated['password'] = Hash::make('default123');
+         $plainPassword = 'default123';
+         $validated['password'] = Hash::make($plainPassword);
 
           $member_type = $request->input('member_type');
           $lastUser = signup::where('member_type', $member_type)
@@ -114,7 +118,7 @@ class SignupController extends Controller
         
         // ✅ Save to DB
         Signup::create($validated);
-
-        return redirect('/member-login')->with('success', 'Signup successful!');
+    Mail::to($Signup->email)->send(new RegistrationMail($user, $plainPassword));
+        return redirect('/member-login')->with('success', 'Signup successful! Please Check Your Email for Password');
     }
 }

@@ -15,7 +15,7 @@ class signup extends Authenticatable
         'registration_no', 'name_bangla', 'name', 'father_name', 'mother_name',
         'present_address', 'permanent_address', 'telephone', 'education_qualification',
         'district', 'thana', 'email', 'facebook_id', 'birthday', 'age', 'blood_group',
-        'nationality', 'national_id', 'reference_id', 'member_type', 'member_img', 'nid_img','password'
+        'nationality', 'national_id', 'reference_id', 'member_type', 'designation','member_img', 'nid_img','password'
     ];
 
     
