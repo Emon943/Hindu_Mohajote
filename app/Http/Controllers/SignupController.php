@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash; 
-use App\Models\Signup;
+use App\Models\signup;
 use App\Models\District;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\RegistrationMail;
@@ -88,30 +88,30 @@ class SignupController extends Controller
 
             $lastRegistrationNo = $lastUser->REGISTRATION_NO;
            
-            $parts = explode('-', $lastRegistrationNo);
+            $parts = explode(' ', $lastRegistrationNo);
 
     if (isset($parts[1])) {
         $number = (int)$parts[1];
         $newNumber = str_pad($number + 1, 2, '0', STR_PAD_LEFT);
-        $newRegistrationNo = $parts[0] . '-' . $newNumber;
+        $newRegistrationNo = $parts[0] . ' ' . $newNumber;
 
        // echo $newRegistrationNo; // ✅ ঠিকভাবে কাজ করবে
          $validated['registration_no'] = $newRegistrationNo;
     } else {
-        echo "Invalid format: dash (-) not found in registration no.";
+        echo "Invalid format: Space ( ) not found in registration no.";
     }
           
            
         }else{
             if ($member_type == '1') {
-                $validated['registration_no'] = 'BJHM10-01';
+                $validated['registration_no'] = 'BJHM 1001';
             } elseif ($member_type == '2') {
-                $validated['registration_no'] = 'BJJM20-01';
+                $validated['registration_no'] = 'BJJM 2001';
             } 
              elseif ($member_type == '3') {
-                $validated['registration_no'] = 'BJSM30-01';
+                $validated['registration_no'] = 'BJSM-3001';
             }else {
-                $validated['registration_no'] = 'BJFM40-01';
+                $validated['registration_no'] = 'BJFM-4001';
             }
         }       
         

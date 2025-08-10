@@ -145,7 +145,7 @@ This is a sample scrolling text that has scrolls texts to the right. This is a s
         </select>
             </div>
            <div class="col-md-3 mb-3">
-                <label>Designation</label>
+                <label>Occupation</label>
                 <input type="text" name="designation" class="form-control" required>
             </div>
             <div class="col-md-6 mb-3">
