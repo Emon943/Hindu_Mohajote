@@ -73,8 +73,18 @@ public function member_update($id)
             'REGISTRATION_NO' => 'required|string|max:255',
         ]);
 
-        $signup = Signup::findOrFail($id);
-        $signup->REGISTRATION_NO = $request->REGISTRATION_NO;
+        $newRegNo = $request->REGISTRATION_NO;
+		// চেক করুন REGISTRATION_NO অন্য কোথাও আছে কি না, শুধু বর্তমান রেকর্ড ছাড়া
+    $exists = Signup::where('REGISTRATION_NO', $newRegNo)
+                ->where('id', '!=', $id)
+                ->exists();
+
+    if ($exists) {
+        // যদি REGISTRATION_NO ইতিমধ্যে অন্য রেকর্ডে থাকে, তাহলে একটি ত্রুটি বার্তা ফেরত দিন
+		 return redirect()->back()->with('success', 'This Registration Number already exists!');
+    }
+		$signup = Signup::findOrFail($id);
+
         $signup->save();
 
         return redirect()->back()->with('success', 'Registration number updated successfully!');
