@@ -12,12 +12,12 @@ use Illuminate\Queue\SerializesModels;
 class RegistrationMail extends Mailable
 {
     use Queueable, SerializesModels;
-     public $user;
+     public $signup;
     public $plainPassword;
 
-    public function __construct($user, $plainPassword = null)
+    public function __construct($signup, $plainPassword = null)
     {
-        $this->Signup = $Signup;
+        $this->signup = $signup;
         $this->plainPassword = $plainPassword;
     }
 
@@ -26,8 +26,8 @@ class RegistrationMail extends Mailable
         return $this->subject('Registration Details')
                     ->markdown('emails.registration')
                     ->with([
-                        'name' => $this->Signup->name ?? $this->Signup->email,
-                        'registration_no' => $this->Signup->registration_no ?? null,
+                        'name' => $this->signup->name ?? $this->signup->email,
+                        'registration_no' => $this->signup->registration_no ?? null,
                         'plainPassword' => $this->plainPassword,
                     ]);
     }

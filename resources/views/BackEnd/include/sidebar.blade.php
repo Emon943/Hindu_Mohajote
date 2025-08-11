@@ -58,7 +58,7 @@
                             @endif
 @if(Auth::check() && Auth::user()->role_id ==2)
                              <li class="@yield('MemberPendingList')">
-                                <a href=" {{ url('/want-help-view') }} "><i class="material-icons">people</i>Member Pending List</a>
+                                <a href=" {{ url('/member-pending-info') }} "><i class="material-icons">people</i>Member Pending List</a>
                             </li>
                             <li class="side-last"></li>
                             @endif

@@ -114,6 +114,11 @@ Route::post('/save-slider', [SliderController::class,'storeSlider']);
 
 Route::get('/slider-view', [SliderController::class,'slider']);
 Route::get('/delete-slider/{id}', [SliderController::class,'delete_slider']);
+Route::get('/member-pending-info', [DashboardController::class,'member_pending_info']);
+Route::get('/view/{id}', [DashboardController::class, 'member_info'])->name('view.member_info');
+Route::get('/pending/{id}', [DashboardController::class, 'check'])->name('pending.check');
+Route::get('/edit/{id}', [DashboardController::class, 'member_update'])->name('edit.member_update');
+Route::post('/update/{id}', [DashboardController::class, 'update'])->name('update.registration');
 
 });
 

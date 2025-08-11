@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class District extends Model
 {
-    protected $fillable = ['name'];
+    protected $fillable = ['district_name'];
 
     public function thanas()
     {

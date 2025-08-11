@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Thana extends Model
 {
-    protected $fillable = ['district_id', 'name'];
+    protected $fillable = ['district_id', 'thana_name'];
 
     public function district()
     {

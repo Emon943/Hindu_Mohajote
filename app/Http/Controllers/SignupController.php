@@ -118,7 +118,13 @@ class SignupController extends Controller
         
         // ✅ Save to DB
         Signup::create($validated);
-    Mail::to($Signup->email)->send(new RegistrationMail($user, $plainPassword));
+    try {
+            Mail::to($signup->email)->send(new RegistrationMail($signup, $plainPassword));
+        } catch (\Throwable $e) {
+            // যদি মেইল ফেইল করে, লগ করে থাকতে পারেন এবং ইউজারকে নোটিফাই করতে পারেন
+            \Log::error('Registration mail failed: '.$e->getMessage());
+            // optional: return back()->with('warning', 'Signup successful but email sending failed.');
+        }
         return redirect('/member-login')->with('success', 'Signup successful! Please Check Your Email for Password');
     }
 }

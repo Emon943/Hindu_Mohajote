@@ -27,7 +27,7 @@ This is a sample scrolling text that has scrolls texts to the right. This is a s
     <div class="alert alert-success">
         {{ session('success') }}
     </div>
-@endif
+   @endif
     <form id="signup_form" action="{{ url('/save-signup') }}" method="POST" enctype="multipart/form-data">
         @csrf
 
