@@ -17,12 +17,21 @@
                                 </ul>
                             </li>
                       
-                            <li class="@yield('needhelp')">
+                            <!-- <li class="@yield('needhelp')">
                                 <a href=" {{ url('/need-help-view') }} "><i class="material-icons">people_outline</i>Need Help</a>
                             </li>
 
-                            <li class="@yield('wanthelp')">
-                                <a href=" {{ url('/want-help-view') }} "><i class="material-icons">people</i>Want to Help</a>
+                           <li class="@yield('wanthelp')">
+                                <a href="{{ url('/want-help-view') }} "><i class="material-icons">people</i>Want to Help</a>
+                            </li>-->
+                            <li class="@yield('for_location')">
+                                <a><i class="material-icons">extension</i>District & Thana<span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level">
+                                    <li class="@yield('district')"><a href=" {{ url('/district-add') }} ">District</a></li>
+                                    <li class="@yield('thana')"><a href=" {{ url('/thana-add') }} ">Thana</a></li>
+                                    <li class="@yield('viewdistrict')"><a href=" {{ url('/view-district') }} ">District List</a></li>
+                                    <li class="@yield('viewthana')"><a href=" {{ url('/view-thana') }} ">Thana List</a></li>
+                                </ul>
                             </li>
 
                             <li class="@yield('for_slider')">

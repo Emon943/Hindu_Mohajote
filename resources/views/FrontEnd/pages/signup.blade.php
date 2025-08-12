@@ -233,7 +233,7 @@ This is a sample scrolling text that has scrolls texts to the right. This is a s
                     $('#thana').empty();
                     $('#thana').append('<option value="">-- Select Thana --</option>');
                     $.each(data, function (key, value) {
-                        $('#thana').append('<option value="' + value.id + '">' + value.name + '</option>');
+                        $('#thana').append('<option value="' + value.id + '">' + value.thana_name + '</option>');
                     });
                 }
             });

@@ -86,6 +86,17 @@ Route::get('/video-delete/{id}', [VideoController::class,'delete']);
 Route::get('/insert', [ProjectInsertController::class,'project_insert']);
 Route::post('/save-project-info', [ProjectInsertController::class,'projectStore']);
 
+Route::get('/district-add', [LocationController::class,'district_add']);
+Route::post('/district/store', [LocationController::class,'storeDistrict'])->name('district.store');
+Route::get('/thana-add', [LocationController::class,'thana_add']);
+Route::post('/thana/store', [LocationController::class,'storeThana'])->name('thana.store');
+Route::get('/view-district', [LocationController::class,'viewDistrict']);
+Route::get('/view-thana', [LocationController::class,'viewThana']);
+Route::get('/edit-district/{id}', [LocationController::class,'editDistrict']);
+Route::post('/update-district', [LocationController::class,'updateDistrict'])->name('district.update');
+Route::get('/edit-thana/{id}', [LocationController::class,'editThana']);
+Route::post('/update-thana', [LocationController::class,'updateThana'])->name('update.thana');
+
 Route::get('/upload', [ProjectImageController::class,'upload_image']);
 Route::post('/save-project-image', [ProjectImageController::class,'storeImage']);
 
