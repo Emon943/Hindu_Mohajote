@@ -8,6 +8,8 @@ use App\Models\signup;
 use App\Models\District;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\RegistrationMail;
+use Illuminate\Support\Str;
+
 
 class SignupController extends Controller
 {
@@ -76,7 +78,8 @@ class SignupController extends Controller
             $validated['nid_img'] = null; // যদি ফাইল না থাকে, তাহলে null সেট করুন
       }
          // Example registration number generation
-         $plainPassword = 'default123';
+        // $plainPassword = 'default123';
+         $plainPassword = Str::random(8);
          $validated['password'] = Hash::make($plainPassword);
 
           $member_type = $request->input('member_type');
@@ -117,7 +120,7 @@ class SignupController extends Controller
         
         
         // ✅ Save to DB
-        Signup::create($validated);
+        $signup=signup::create($validated);
     try {
             Mail::to($signup->email)->send(new RegistrationMail($signup, $plainPassword));
         } catch (\Throwable $e) {

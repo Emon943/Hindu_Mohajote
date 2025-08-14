@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth; 
 
-use App\Models\Signup;
+use App\Models\signup;
 
 class MemberLoginController extends Controller
 {

@@ -78,7 +78,7 @@ This is a sample scrolling text that has scrolls texts to the right. This is a s
         <select id="district" name="district" class="form-control">
             <option value="">-- select districts--</option>
             @foreach($districts as $district)
-                <option value="{{ $district->id }}">{{ $district->name }}</option>
+                <option value="{{ $district->id }}">{{ $district->district_name }}</option>
             @endforeach
         </select>
      </div>

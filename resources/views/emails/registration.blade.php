@@ -8,7 +8,7 @@
 - Temporary Password: **{{ $plainPassword }}**
 @endif
 
-@component('mail::button', ['url' => url('/login')])
+@component('mail::button', ['url' => url('/member-login')])
 Login
 @endcomponent
 

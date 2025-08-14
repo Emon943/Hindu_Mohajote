@@ -73,7 +73,7 @@ return [
 
         'signups' => [ // ✅ এই নামটা guards-এ use হচ্ছে
         'driver' => 'eloquent',
-        'model' => App\Models\Signup::class,
+        'model' => App\Models\signup::class,
     ],
   
     ],
