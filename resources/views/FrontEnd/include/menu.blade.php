@@ -21,7 +21,7 @@
 					   <li><a href=" {{ url('/') }} ">Home</a></li>
 					    <li><a href=" {{ url('/contact-us') }} ">Contacts Us</a></li>
                         <li><a href=" {{ url('/member-login') }} ">Sign In</a></li>
-                        <li><a id="bdr_none" href=" {{ url('/signup') }} ">Sign Up</a></li>
+                        <li><a id="bdr_none" href=" {{ url('/signup') }} ">Registration</a></li>
                         <!--<li><a id="bdr_none" href=" {{ url('/want-help') }} ">Want to Help?</a></li>-->
                     </ul>
                 </div>

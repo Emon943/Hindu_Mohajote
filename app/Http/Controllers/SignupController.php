@@ -56,7 +56,7 @@ class SignupController extends Controller
             'member_type' => 'nullable|string|max:100',
             'designation' => 'nullable|string|max:100',
             'member_img' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
-            'nid_img' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+            'nid_img' => 'nullable|mimes:jpg,jpeg,png,pdf|max:2048',
         ]);
 
         // ✅ File Uploads
@@ -121,6 +121,7 @@ class SignupController extends Controller
         
         // ✅ Save to DB
         $signup=signup::create($validated);
+        
     try {
             Mail::to($signup->email)->send(new RegistrationMail($signup, $plainPassword));
         } catch (\Throwable $e) {

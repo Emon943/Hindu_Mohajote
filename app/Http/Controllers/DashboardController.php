@@ -6,8 +6,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\signup;
-
-use DB;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\RegistrationMail;
+use Illuminate\Support\Facades\Hash;
 
 class DashboardController extends Controller
 {
@@ -21,7 +23,7 @@ class DashboardController extends Controller
     	$want = DB::table('want_helps')->count();
     	return view('BackEnd.pages.home',['project' => $project, 'need' => $need, 'want' => $want,]);
 		}
-	if(Auth::check() && Auth::user()->role_id ==2){
+	if(Auth::check() && Auth::user()->role_id ==2 || Auth::check() && Auth::user()->role_id ==3){
         $PENDING = DB::table('signups')->where('STATUS', 'PENDING')->count();
 		$CHECKING = DB::table('signups')->where('STATUS', 'CHECKING')->count();
 		$APPROVED = DB::table('signups')->where('STATUS', 'APPROVED')->count();
@@ -82,12 +84,68 @@ public function member_update($id)
     if ($exists) {
         // যদি REGISTRATION_NO ইতিমধ্যে অন্য রেকর্ডে থাকে, তাহলে একটি ত্রুটি বার্তা ফেরত দিন
 		 return redirect()->back()->with('success', 'This Registration Number already exists!');
-    }
-		$signup = Signup::findOrFail($id);
-
+    }else{
+        // যদি REGISTRATION_NO অন্য কোথাও না থাকে, তাহলে আপডেট করুন
+        $signup = Signup::findOrFail($id);
+        $signup->REGISTRATION_NO = $newRegNo;
         $signup->save();
-
-        return redirect()->back()->with('success', 'Registration number updated successfully!');
+        return redirect()->back()->with('success', 'Registration Number updated successfully!');
+        
     }
+		
+    }
+
+
+    public function member_checking_info(){
+
+    	 $CHECKING = DB::table('signups')->where('STATUS', 'CHECKING')->get();
+    	return view('BackEnd.pages.member_checking_info', ['CHECKING' => $CHECKING]);
+    }
+
+    public function aproved($id){
+        $signup = DB::table('signups')->where('id', $id)->first();
+        if ($signup) {
+            DB::table('signups')->where('id', $id)->update(['STATUS' => 'APPROVED']);
+            return redirect()->back()->with('success', 'Member approved successfully.');
+            Mail::to($signup->email)->send(new RegistrationMail($signup, 'Your membership has been approved. Welcome to our community!'));
+        }
+        return redirect()->back()->with('error', 'Member not found.'); 
+    }
+    public function check_member_info($id)
+    {
+        $signup = DB::table('signups')
+            ->join('districts', 'signups.DISTRICT', '=', 'districts.id')
+            ->join('thanas', 'signups.THANA', '=', 'thanas.id')
+            ->select(
+                'signups.*',
+                'districts.district_name',
+                'thanas.thana_name'
+            )
+            ->where('signups.id', $id)
+            ->first(); // single row নিতে চাইলে first(), multiple চাইলে get()
+        return view('BackEnd.pages.check_member_info', compact('signup'));
+    }
+
+    public function reject_member($id)
+    {
+        $signup = DB::table('signups')->where('id', $id)->first();
+        if ($signup) {
+            DB::table('signups')->where('id', $id)->update(['STATUS' => 'REJECTED']);
+            return redirect()->back()->with('success', 'Member rejected successfully.');
+
+            Mail::to($signup->email)->send(new RegistrationMail($signup, 'Your membership has been rejected. Please contact us for more details.'));
+            
+        }
+        return redirect()->back()->with('error', 'Member not found.');
+    }
+    public function member_aproved_list()
+    {
+        $APPROVED = DB::table('signups')->where('STATUS', 'APPROVED')->get();
+        return view('BackEnd.pages.member_aproved_list', ['APPROVED' => $APPROVED]);
+    }
+ 
+
+
+        
 
 }

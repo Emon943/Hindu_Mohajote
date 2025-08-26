@@ -131,6 +131,15 @@ Route::get('/pending/{id}', [DashboardController::class, 'check'])->name('pendin
 Route::get('/edit/{id}', [DashboardController::class, 'member_update'])->name('edit.member_update');
 Route::post('/update/{id}', [DashboardController::class, 'update'])->name('update.registration');
 
+Route::get('/member-check-info', [DashboardController::class,'member_checking_info']);
+Route::get('/aproved/{id}', [DashboardController::class, 'aproved'])->name('aproved');
+Route::get('/view-check-member/{id}', [DashboardController::class, 'check_member_info'])->name('view.check_member');
+Route::get('/reject-member/{id}', [DashboardController::class, 'reject_member'])->name('reject');
+Route::get('/member-aprove-list', [DashboardController::class, 'member_aproved_list']);
+
+
+
+
 });
 
 

@@ -70,7 +70,16 @@
                                 <a href=" {{ url('/member-pending-info') }} "><i class="material-icons">people</i>Member Pending List</a>
                             </li>
                             <li class="side-last"></li>
-                            @endif
+                             @endif
+                            @if(Auth::check() && Auth::user()->role_id ==3)
+                             <li class="@yield('MembercheckList')">
+                                <a href=" {{ url('/member-check-info') }} "><i class="material-icons">people</i>Member Check List For Aprove</a>
+                            </li>
+                            <li class="@yield('MembercheckList')">
+                                <a href=" {{ url('/member-aprove-list') }} "><i class="material-icons">people</i>Member Aproved List</a>
+                            </li>
+                            <li class="side-last"></li>
+                              @endif
                         </ul>
                     </div>
                 </div>

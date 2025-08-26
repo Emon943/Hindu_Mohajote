@@ -53,7 +53,7 @@
       </tr>
     </thead>
     <tbody>
-     @foreach($PENDING as $pend)
+     @foreach($APPROVED as $pend)
 											    <tr>
       												<td>
         												{{ date('d-m-Y', strtotime($pend->created_at)) }}
@@ -79,10 +79,10 @@
       												<td>{{$pend->DISTRICT}}</td>
       												<td>{{$pend->THANA}}</td>
       												<td class="text-center">
-													<a id="pend_ind" href="{{ route('pending.check', $pend->id) }}" data-toggle="tooltip" title="Send to Aproved"><i style="font-size: 20px" class="glyphicon glyphicon-ok"></i></a>
+													
                                                     <a id="pend_show" href="{{ route('view.member_info', $pend->id) }}" data-toggle="tooltip" title="Send to View"><i style="font-size: 20px" class="glyphicon glyphicon-eye-open"></i></a>
-                                                    <a id="pend_edit" href="{{ route('edit.member_update', $pend->id) }}" data-toggle="tooltip" title="Send to Edit"><i style="font-size: 20px" class="glyphicon glyphicon-pencil"></i></a>
-   
+                                                   
+    
 
         											</td>
       											</tr>

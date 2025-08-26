@@ -21,7 +21,7 @@
                             <i class="material-icons">people_outline</i>
                         </div>
                         <div class="header-title">
-                            <h1>Member Pending Info</h1>
+                            <h1>Member Check For Final Aprove List</h1>
                         </div>
                         @if (session('success'))
                         <div class="alert alert-success">
@@ -53,36 +53,36 @@
       </tr>
     </thead>
     <tbody>
-     @foreach($PENDING as $pend)
+     @foreach($CHECKING as $check)
 											    <tr>
       												<td>
-        												{{ date('d-m-Y', strtotime($pend->created_at)) }}
+        												{{ date('d-m-Y', strtotime($check->created_at)) }}
 		      												
       												</td>
-      												<td>{{$pend->REGISTRATION_NO}}</td>
-                                                    <td>{{$pend->NAME}}</td>
-      												<td>{{$pend->EMAIL}}</td>
-      												<td>{{$pend->REFERENCE_ID}}</td>
-      												<td>{{$pend->TELEPHONE}}</td>
-      												<td>{{$pend->DESIGNATION}}</td>
+      												<td>{{$check->REGISTRATION_NO}}</td>
+                                                    <td>{{$check->NAME}}</td>
+      												<td>{{$check->EMAIL}}</td>
+      												<td>{{$check->REFERENCE_ID}}</td>
+      												<td>{{$check->TELEPHONE}}</td>
+      												<td>{{$check->DESIGNATION}}</td>
       												<td>
-        												@if($pend->MeMBER_TYPE == 1)
+        												@if($check->MeMBER_TYPE == 1)
         													General
-        												@elseif($pend->MeMBER_TYPE == 2)
+        												@elseif($check->MeMBER_TYPE == 2)
         													Youth
-        												@elseif($pend->MeMBER_TYPE == 3)
+        												@elseif($check->MeMBER_TYPE == 3)
         													Student
-        												@elseif($pend->MeMBER_TYPE == 4)
+        												@elseif($check->MeMBER_TYPE == 4)
         													Female
         												@endif
         											</td>
-      												<td>{{$pend->DISTRICT}}</td>
-      												<td>{{$pend->THANA}}</td>
+      												<td>{{$check->DISTRICT}}</td>
+      												<td>{{$check->THANA}}</td>
       												<td class="text-center">
-													<a id="pend_ind" href="{{ route('pending.check', $pend->id) }}" data-toggle="tooltip" title="Send to Aproved"><i style="font-size: 20px" class="glyphicon glyphicon-ok"></i></a>
-                                                    <a id="pend_show" href="{{ route('view.member_info', $pend->id) }}" data-toggle="tooltip" title="Send to View"><i style="font-size: 20px" class="glyphicon glyphicon-eye-open"></i></a>
-                                                    <a id="pend_edit" href="{{ route('edit.member_update', $pend->id) }}" data-toggle="tooltip" title="Send to Edit"><i style="font-size: 20px" class="glyphicon glyphicon-pencil"></i></a>
-   
+													<a id="check" href="{{ route('aproved', $check->id) }}" data-toggle="tooltip" title="Send to Aproved"><i style="font-size: 20px" class="glyphicon glyphicon-ok"></i></a>
+                                                    <a id="check_show" href="{{ route('view.check_member', $check->id) }}" data-toggle="tooltip" title="Send to View"><i style="font-size: 20px" class="glyphicon glyphicon-eye-open"></i></a>
+                                                    <a id="check_edit" href="{{ route('reject', $check->id) }}" data-toggle="tooltip" title="Send to Edit"><i style="font-size: 20px" class="glyphicon glyphicon-remove"></i></a>
+    
 
         											</td>
       											</tr>

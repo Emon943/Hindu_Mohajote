@@ -41,16 +41,16 @@
 <div class="mt-4">
     <x-input-label for="role" :value="__('User Role')" />
 
-    <select id="role" name="role"
+    <select id="role_id" name="role_id"
         class="block mt-1 w-full rounded-md shadow-sm border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
         required>
         <option value="">-- Select Role --</option>
-        <option value="admin" {{ old('role') == 'admin' ? 'selected' : '' }}>Admin</option>
-        <option value="member" {{ old('role') == 'member' ? 'selected' : '' }}>Member</option>
-        <option value="user" {{ old('role') == 'user' ? 'selected' : '' }}>User</option>
+         @foreach($roles as $role)
+        <option value="{{ $role->id }}" {{ old('role') == 'admin' ? 'selected' : '' }}>{{ $role->name }}</option>
+        @endforeach
     </select>
 
-    <x-input-error :messages="$errors->get('role')" class="mt-2" />
+    <x-input-error :messages="$errors->get('role_id')" class="mt-2" />
 </div>
 
 
